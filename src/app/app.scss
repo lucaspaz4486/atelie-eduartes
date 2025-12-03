@@ -1,0 +1,364 @@
+/* NAV */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+
+  .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+  font-family: 'Cinzel', serif; /* Fonte estilo romano/clássico */
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2E004F; /* Roxo escuro */
+  text-decoration: none;
+  
+  .at-symbol {
+    color: #DAA520; /* Dourado */
+    font-family: 'Great Vibes', cursive; /* Fonte cursiva para o @ parecer arte */
+    font-size: 2.2rem; /* Um pouco maior que o resto */
+    vertical-align: middle;
+  }
+  
+  .suffix {
+    color: #C5A059; /* Ouro mais suave para 'rtes' ou manter roxo */
+  }
+}
+
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    
+    li {
+      cursor: pointer;
+      font-weight: 500;
+      &:hover { color: var(--accent-color); }
+    }
+  }
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  margin-top: 60px; // Espaço da nav
+
+  .hero-content {
+    max-width: 500px;
+    h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
+    p { font-size: 1.2rem; margin-bottom: 30px; color: #666; }
+  }
+
+  .hero-image {
+    .main-mandala {
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      object-fit: cover;
+    }
+  }
+}
+
+/* SOBRE */
+.section-sobre {
+  padding: 80px 0;
+  background-color: #fff;
+  text-align: center;
+
+  .sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .sobre-cards {
+    display: flex;
+    gap: 20px;
+    
+    .card-info {
+      background: var(--bg-color);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      flex: 1;
+      i { font-size: 2rem; color: var(--accent-color); margin-bottom: 10px; }
+    }
+  }
+}
+
+/* GALERIA (O Importante) */
+.section-galeria {
+  padding: 80px 0;
+  text-align: center;
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsivo Automático */
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .mandala-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+
+    &:hover { transform: translateY(-10px); }
+
+    .card-img-wrapper {
+      padding: 20px;
+      background: var(--bg-color);
+      img {
+        width: 100%;
+        height: 250px;
+        object-fit: contain;
+        border-radius: 50%; /* Deixa a foto redonda */
+      }
+    }
+
+    .card-body {
+      padding: 25px;
+      h3 { margin-bottom: 10px; }
+      .tag { 
+        background: var(--primary-color); 
+        color: white; 
+        padding: 5px 15px; 
+        border-radius: 20px; 
+        font-size: 0.8rem;
+      }
+      p { margin: 15px 0; font-size: 0.9rem; color: #666; }
+      .btn-card {
+        border: 1px solid var(--accent-color);
+        background: transparent;
+        color: var(--accent-color);
+        padding: 8px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover { background: var(--accent-color); color: white; }
+      }
+    }
+  }
+}
+
+/* RESPONSIVIDADE (Mobile) */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    height: auto;
+    padding: 100px 20px;
+    
+    .hero-image .main-mandala { width: 300px; height: 300px; margin-bottom: 30px; }
+    .hero-content h1 { font-size: 2.5rem; }
+  }
+
+  .section-sobre .sobre-grid { grid-template-columns: 1fr; }
+  .navbar ul { display: none; } /* Simples para MVP: esconde menu no mobile */
+}
+
+footer {
+  background: var(--primary-color);
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  i { color: var(--accent-color); margin: 0 5px; }
+}
+/* ... (Seus estilos anteriores) ... */
+
+/* SEÇÃO CONTATO */
+.section-contato {
+  padding: 80px 0;
+  background-color: #fff;
+  
+  h2 { text-align: center; color: var(--primary-color); margin-bottom: 10px; }
+  .subtitle { text-align: center; color: #666; margin-bottom: 50px; }
+
+  .contact-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: var(--bg-color);
+    width: 280px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+
+    &:hover { transform: translateY(-10px); }
+
+    /* Estilo do Círculo do Ícone */
+    .icon-circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      
+      i {
+        font-size: 2.5rem;
+      }
+    }
+
+    h4 { color: var(--primary-color); font-size: 1.3rem; margin-bottom: 5px; }
+    p { color: #555; margin-bottom: 15px; }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 8px 25px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s;
+      width: 100%;
+      &:hover { background: var(--primary-color); color: white; }
+    }
+  }
+
+  /* CORES ESPECÍFICAS DAS LOGOS */
+  
+  /* WhatsApp (Verde) */
+  .whatsapp-card {
+    .icon-circle i { color: #25D366; }
+    &:hover .btn-outline { background-color: #25D366; border-color: #25D366; }
+  }
+
+  /* Instagram (Gradiente Roxo/Rosa) */
+  .instagram-card {
+    .icon-circle i { 
+      background: -webkit-linear-gradient(#405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    &:hover .btn-outline { background-color: #C13584; border-color: #C13584; }
+  }
+
+  /* Facebook (Azul) */
+  .facebook-card {
+    .icon-circle i { color: #1877F2; }
+    &:hover .btn-outline { background-color: #1877F2; border-color: #1877F2; }
+  }
+}
+/* PLAYER DE MÚSICA ZEN */
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* Canto inferior esquerdo */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 1px solid var(--accent-color);
+  transition: all 0.3s ease;
+
+  /* Efeito de brilho quando está tocando */
+  &.playing {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .controls {
+    display: flex;
+    gap: 5px;
+  }
+
+  .btn-music {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.1);
+      background: var(--accent-color);
+    }
+  }
+
+  .volume-btn {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+
+    &:hover {
+      background: var(--primary-color);
+      color: white;
+    }
+  }
+
+  .music-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    padding-right: 10px;
+    animation: fadePulse 2s infinite;
+  }
+}
+
+@keyframes fadePulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+body {
+  background-color: #fdfbf7; 
+  
+  color: #333;
+}
+
+/* Seus cards continuam brancos para destacar */
+.card-info {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave */
+  border: 1px solid rgba(218, 165, 32, 0.2); /* Borda dourada bem fininha opcional */
+}

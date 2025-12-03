@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+/* Importando fontes elegantes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@300;400&display=swap');
+
+:root {
+  --primary-color: #2c1b4e; /* Roxo Místico Profundo */
+  --accent-color: #d4af37; /* Dourado Envelhecido */
+  --text-color: #333;
+  --bg-color: #f9f7f2; /* Off-white papel arroz */
+  --card-bg: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif; /* Fonte clássica/espiritual */
+  color: var(--primary-color);
+}
+
+/* Animação de Rotação Suave para as Mandalas */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin-on-hover:hover {
+  animation: spin-slow 15s linear infinite;
+  cursor: pointer;
+}
+
+/* Utilitários */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn-main {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+  &:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+}
