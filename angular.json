@@ -83,10 +83,7 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/assets",
-              "src/_redirects",
-              "src/robots.txt",
-              "src/sitemap.xml"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
