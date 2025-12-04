@@ -1,13 +1,13 @@
 <header class="navbar">
   <div class="container nav-content">
     <div class="logo">
-      <a href="#" class="logo">Edu<span class="at-symbol">@</span>rtes</a>
+      <a href="#" class="logo" aria-label="Voltar ao topo">Edu<span class="at-symbol">@</span>rtes</a>
     </div>
     <nav>
       <ul>
-        <li (click)="scrollTo('sobre')">Sobre</li>
-        <li (click)="scrollTo('galeria')">Galeria</li>
-        <li (click)="scrollTo('contato')">Contato</li>
+        <li><a href="javascript:void(0)" (click)="scrollTo('sobre')">Sobre</a></li>
+        <li><a href="javascript:void(0)" (click)="scrollTo('galeria')">Galeria</a></li>
+        <li><a href="javascript:void(0)" (click)="scrollTo('contato')">Contato</a></li>
       </ul>
     </nav>
   </div>
@@ -17,10 +17,10 @@
   <div class="hero-content">
     <h1>Harmonia em cada traço</h1>
     <p>Arte terapêutica, cultura milenar e autoconhecimento através das Mandalas.</p>
-    <a (click)="scrollTo('galeria')" class="btn-main">Ver Coleção</a>
+    <a href="javascript:void(0)" (click)="scrollTo('galeria')" class="btn-main" aria-label="Ver coleção de mandalas">Ver Coleção</a>
   </div>
   <div class="hero-image">
-    <img src="/assets/images/mandala18.png" alt="Mandala Principal" class="spin-on-hover main-mandala">
+    <img src="assets/images/mandala18.png" alt="Mandala Principal - Arte em destaque" class="spin-on-hover main-mandala" width="450" height="450">
   </div>
 </section>
 
@@ -37,15 +37,15 @@
       </div>
       <div class="sobre-cards">
         <div class="card-info">
-          <i class="fas fa-brain"></i>
+          <i class="fas fa-brain" aria-hidden="true"></i>
           <h3>Foco</h3>
         </div>
         <div class="card-info">
-          <i class="fas fa-heart"></i>
+          <i class="fas fa-heart" aria-hidden="true"></i>
           <h3>Equilíbrio</h3>
         </div>
         <div class="card-info">
-          <i class="fas fa-infinity"></i>
+          <i class="fas fa-infinity" aria-hidden="true"></i>
           <h3>Conexão</h3>
         </div>
       </div>
@@ -61,13 +61,13 @@
     <div class="gallery-grid">
       <div class="mandala-card" *ngFor="let item of mandalas">
         <div class="card-img-wrapper">
-          <img [src]="item.image" [alt]="item.title" class="spin-on-hover">
+          <img [src]="item.image" [alt]="item.title" class="spin-on-hover" loading="lazy" width="280" height="280">
         </div>
         <div class="card-body">
           <h3>{{ item.title }}</h3>
           <span class="tag">{{ item.color }}</span>
           <p>{{ item.meaning }}</p>
-          <button class="btn-card" (click)="openWhatsapp(item.title)">Saber Mais</button>
+          <button class="btn-card" (click)="openWhatsapp(item.title)" aria-label="Saber mais sobre esta mandala no WhatsApp">Saber Mais</button>
         </div>
       </div>
     </div>
@@ -83,34 +83,34 @@
       
       <div class="info-item whatsapp-card">
         <div class="icon-circle">
-          <i class="fab fa-whatsapp"></i>
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
         </div>
         <div>
           <h4>WhatsApp</h4>
           <p>Atendimento direto</p>
-          <button class="btn-outline" (click)="contactWhatsapp()">Enviar Mensagem</button>
+          <button class="btn-outline" (click)="contactWhatsapp()" aria-label="Enviar mensagem no WhatsApp">Enviar Mensagem</button>
         </div>
       </div>
 
       <div class="info-item instagram-card">
         <div class="icon-circle">
-          <i class="fab fa-instagram"></i>
+          <i class="fab fa-instagram" aria-hidden="true"></i>
         </div>
         <div>
           <h4>Instagram</h4>
           <p>Siga a Eduarts Artes</p>
-          <button class="btn-outline" (click)="openInstagram()">@eduarts_artes</button>
+          <button class="btn-outline" (click)="openInstagram()" aria-label="Seguir no Instagram">@eduarts_artes</button>
         </div>
       </div>
 
       <div class="info-item facebook-card">
         <div class="icon-circle">
-          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
         </div>
         <div>
           <h4>Facebook</h4>
           <p>Eduardo Eruz</p>
-          <button class="btn-outline" (click)="openFacebook()">Acessar Perfil</button>
+          <button class="btn-outline" (click)="openFacebook()" aria-label="Acessar perfil no Facebook">Acessar Perfil</button>
         </div>
       </div>
 
@@ -118,15 +118,22 @@
   </div>
 </section>
 
+<footer>
+  <div class="container">
+    <p>© 2025 Ateliê Eduarts Artes. Todos os direitos reservados.</p>
+    <p class="credits">Desenvolvido com <i class="fas fa-heart"></i> para a Difusão Cultural</p>
+  </div>
+</footer>
+
 <div class="music-player" [class.playing]="isPlaying">
   
   <div class="controls">
-    <button class="btn-music" (click)="toggleMusic()" title="Tocar/Pausar Música">
-      <i class="fas" [class.fa-play]="!isPlaying" [class.fa-pause]="isPlaying"></i>
+    <button class="btn-music" (click)="toggleMusic()" title="Tocar/Pausar Música" aria-label="Tocar ou Pausar música de fundo">
+      <i class="fas" [class.fa-play]="!isPlaying" [class.fa-pause]="isPlaying" aria-hidden="true"></i>
     </button>
 
-    <button class="btn-music volume-btn" (click)="toggleMute()" *ngIf="isPlaying" title="Mutar/Desmutar">
-      <i class="fas" [class.fa-volume-up]="!isMuted" [class.fa-volume-mute]="isMuted"></i>
+    <button class="btn-music volume-btn" (click)="toggleMute()" *ngIf="isPlaying" title="Mutar/Desmutar" aria-label="Ativar ou desativar som">
+      <i class="fas" [class.fa-volume-up]="!isMuted" [class.fa-volume-mute]="isMuted" aria-hidden="true"></i>
     </button>
   </div>
 
